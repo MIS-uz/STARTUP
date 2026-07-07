@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirish / Ro'yxatdan O'tish — CORE Academy</title>
+  <link rel="stylesheet" href="../css/theme.css">
+  <style>
+    /* Additional custom styling for role selection */
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-wrap">
+    <!-- Left Side: Brand Showcase -->
+    <div class="auth-hero">
+      <div style="margin-bottom:auto">
+        <div style="display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;margin-bottom:8px">
+          <span style="width:40px;height:40px;border-radius:10px;background:var(--grad-brand);display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900">C</span>
+          CORE Academy
+        </div>
+      </div>
+      
+      <div style="margin: auto 0">
+        <h1>Ta'limning kelajagiga xush kelibsiz</h1>
+        <p>12,000 dan ortiq o'quvchilarga qo'shiling va kelajak kasblarini professional darajada o'rganing.</p>
+        
+        <div class="feats">
+          <div>
+            <span class="b">🎥</span>
+            <span>Jonli darslar va interaktiv vebinarlar</span>
+          </div>
+          <div>
+            <span class="b">🤖</span>
+            <span>AI yordamchi va aqlli tavsiyalar</span>
+          </div>
+          <div>
+            <span class="b">🏆</span>
+            <span>Rasmiy bitiruv sertifikatlari</span>
+          </div>
+          <div>
+            <span class="b">💬</span>
+            <span>Telegram-style qulay guruh chatlari</span>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top:auto;font-size:13px;color:var(--muted)">
+        &copy; 2026 CORE Academy. Barcha huquqlar himoyalangan.
+      </div>
+    </div>
+
+    <!-- Right Side: Forms (Tabs: Login/Register) -->
+    <div class="auth-form">
+      <div class="box">
+        <!-- Tabs -->
+        <div class="tabs" id="authTabs">
+          <button class="active" onclick="switchTab('login')">Kirish</button>
+          <button onclick="switchTab('register')">Ro'yxatdan o'tish</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div id="loginForm">
+          <h2>Tizimga kirish</h2>
+          <div class="sub">Elektron pochtangiz va parolingizni kiriting</div>
+
+          <div class="social-btns">
+            <button onclick="socialLogin('Google')"><span>🌐</span> Google</button>
+            <button onclick="socialLogin('Telegram')"><span>💬</span> Telegram</button>
+          </div>
+
+          <div class="divider">yoki email orqali</div>
+
+          <form onsubmit="handleAuth(event, 'login')">
+            <div class="field">
+              <label for="loginEmail">E-pochta manzili</label>
+              <input type="email" id="loginEmail" placeholder="nom@example.uz" required>
+            </div>
+            
+            <div class="field">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                <label style="margin-bottom:0" for="loginPass">Parol</label>
+                <a href="#" onclick="showToast('Parolni tiklash havolasi emailga yuborildi', 'info')" style="font-size:12px;color:var(--blue)">Parolni unutdingiz?</a>
+              </div>
+              <input type="password" id="loginPass" placeholder="••••••••" required>
+            </div>
+
+            <div class="field">
+              <label class="checkbox">
+                <input type="checkbox" checked>
+                <span>Meni eslab qol</span>
+              </label>
+            </div>
+
+            <!-- Role select for login simulation -->
+            <div class="field">
+              <label for="loginRole">Kirish roli (Demo)</label>
+              <select id="loginRole">
+                <option value="student">🎓 O'quvchi (Student)</option>
+                <option value="teacher">👨‍🏫 O'qituvchi (Teacher)</option>
+                <option value="admin">👔 Boshliq (Admin/Director)</option>
+                <option value="creator">🛡️ Yaratuvchi (Creator/Super Admin)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Tizimga kirish</button>
+          </form>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div id="registerForm" class="hidden">
+          <h2>Ro'yxatdan o'tish</h2>
+          <div class="sub">Rolingizni tanlang va ma'lumotlaringizni to'ldiring</div>
+
+          <form onsubmit="handleAuth(event, 'register')">
+            <!-- Role Cards (2x2 Grid) -->
+            <div class="field">
+              <label>Rolingizni tanlang</label>
+              <div class="role-grid">
+                <div class="role-card selected" onclick="selectRole('student')" id="role-student">
+                  <div class="role-icon">🎓</div>
+                  <div class="role-name">O'quvchi</div>
+                  <div class="role-desc">Kurs olish va o'rganish</div>
+                </div>
+                <div class="role-card" onclick="selectRole('teacher')" id="role-teacher">
+                  <div class="role-icon">👨‍🏫</div>
+                  <div class="role-name">O'qituvchi</div>
+                  <div class="role-desc">Dars o'tish va boshqarish</div>
+                </div>
+                <div class="role-card" onclick="selectRole('admin')" id="role-admin">
+                  <div class="role-icon">👔</div>
+                  <div class="role-name">Boshliq</div>
+                  <div class="role-desc">O'quv markazni boshqarish</div>
+                </div>
+                <div class="role-card" onclick="selectRole('creator')" id="role-creator">
+                  <div class="role-icon">🛡️</div>
+                  <div class="role-name">Yaratuvchi</div>
+                  <div class="role-desc">Platformani boshqarish</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="regName">To'liq ism-sharifingiz</label>
+              <input type="text" id="regName" placeholder="Sherzod Karimov" required>
+            </div>
+
+            <div class="field">
+              <label for="regEmail">E-pochta manzili</label>
+              <input type="email" id="regEmail" placeholder="nom@example.uz" required>
+            </div>
+
+            <div class="field">
+              <label for="regPass">Maxfiy parol</label>
+              <input type="password" id="regPass" placeholder="Kamida 6 ta belgi" required minlength="6">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Ro'yxatdan o'tish</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/app.js"></script>
+  <script>
+    let selectedRole = 'student';
+
+    // Tab switching
+    function switchTab(tab) {
+      const tabs = document.querySelectorAll('#authTabs button');
+      const login = document.getElementById('loginForm');
+      const register = document.getElementById('registerForm');
+      
+      if (tab === 'login') {
+        tabs[0].classList.add('active');
+        tabs[1].classList.remove('active');
+        login.classList.remove('hidden');
+        register.classList.add('hidden');
+      } else {
+        tabs[0].classList.remove('active');
+        tabs[1].classList.add('active');
+        login.classList.add('hidden');
+        register.classList.remove('hidden');
+      }
+    }
+
+    // Role card selection
+    function selectRole(role) {
+      selectedRole = role;
+      document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
+      document.getElementById(`role-${role}`).classList.add('selected');
+    }
+
+    // Social login simulation
+    function socialLogin(provider) {
+      showToast(`${provider} orqali kirish simulyatsiya qilindi.`, 'success');
+      setTimeout(() => {
+        const demoUser = {
+          name: `${provider} User`,
+          role: 'student',
+          email: `${provider.toLowerCase()}@example.com`
+        };
+        setCurrentUser(demoUser);
+        window.location.href = 'dashboard.html';
+      }, 1000);
+    }
+
+    // Main auth submit logic
+    function handleAuth(event, type) {
+      event.preventDefault();
+      
+      let user = {};
+      if (type === 'login') {
+        const email = document.getElementById('loginEmail').value;
+        const role = document.getElementById('loginRole').value;
+        const name = email.split('@')[0];
+        
+        user = {
+          name: name.charAt(0).toUpperCase() + name.slice(1) || 'Demo Foydalanuvchi',
+          role: role,
+          email: email
+        };
+      } else {
+        const name = document.getElementById('regName').value;
+        const email = document.getElementById('regEmail').value;
+        
+        user = {
+          name: name,
+          role: selectedRole,
+          email: email
+        };
+      }
+
+      // Save user & redirect
+      setCurrentUser(user);
+      showToast(`Muvaffaqiyatli bajarildi! Panelga yo'naltirilmoqda...`, 'success');
+
+      setTimeout(() => {
+        const roleDashboard = ROLES[user.role].dashboard;
+        window.location.href = roleDashboard;
+      }, 800);
+    }
+
+    // Check query params to switch tab
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('register') === 'true') {
+      switchTab('register');
+    }
+  </script>
+</body>
+</html>
