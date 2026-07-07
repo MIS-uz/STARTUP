@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORE Academy — Zamonaviy Ta'lim Platformasi</title>
+  <meta name="description" content="Zamonaviy darslar, Telegram chatlari, live-vebinarlar va premium edtech tizimi bilan jihozlangan eng yaxshi ta'lim platformasi.">
+  <link rel="stylesheet" href="css/theme.css">
+  <style>
+    /* Custom modifications for landing page */
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 40px auto 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="land">
+    <!-- Sticky Navbar -->
+    <header class="nav-top">
+      <a href="index.html" class="brand-link">
+        <div class="logo-sm">C</div>
+        <div>CORE <span>Academy</span></div>
+      </a>
+      <nav>
+        <a href="#features">Xususiyatlar</a>
+        <a href="#pricing">Tariflar</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div style="display: flex; gap: 10px;">
+        <a href="pages/login.html" class="btn btn-ghost btn-sm">Kirish</a>
+        <a href="pages/login.html?register=true" class="btn btn-primary btn-sm">Ro'yxatdan o'tish</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div>
+        <span class="pill gold mb-2">🚀 Kelajak ta'limi shu yerda</span>
+        <h1>Zamonaviy ta'lim <em>platformasi</em></h1>
+        <p>
+          Zamonaviy va qulay tizim orqali bilmingizni oshiring. Jonli darslar, interaktiv topshiriqlar va Telegram kabi qulay chat tizimi sizni kutmoqda. Bepul sinab ko'ring va natijani his qiling!
+        </p>
+        <div class="cta">
+          <a href="pages/login.html" class="btn btn-primary btn-lg">Boshlash</a>
+          <a href="#courses" class="btn btn-ghost btn-lg">Kurslarni ko'rish</a>
+        </div>
+        
+        <!-- Stats Row -->
+        <div class="hero-vis" style="display: none;"></div> <!-- Fallback for layout check -->
+        <div class="stats stagger">
+          <div>
+            <div class="n">12,000+</div>
+            <div class="l">Faol o'quvchilar</div>
+          </div>
+          <div>
+            <div class="n">500+</div>
+            <div class="l">Video darslar</div>
+          </div>
+          <div>
+            <div class="n">50+</div>
+            <div class="l">Ekspert ustozlar</div>
+          </div>
+          <div>
+            <div class="n">98%</div>
+            <div class="l">Mamnuniyat</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Visual Cards -->
+      <div class="hero-vis">
+        <div class="glow"></div>
+        
+        <!-- Card 1: Live Lesson Preview -->
+        <div class="float-card c1">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <span class="pill green">🟢 JONLI DARS</span>
+            <span style="font-size:12px;color:var(--muted);margin-left:auto">124 tomoshabin</span>
+          </div>
+          <h4 style="font-size:15px;margin-bottom:6px">Python Dasturlash Asoslari</h4>
+          <p style="font-size:12px;color:var(--muted)">Ustoz: Alex Lee</p>
+          <div style="margin-top:12px;display:flex;gap:4px">
+            <span class="avatar sm">AL</span>
+            <span class="avatar sm gold">U1</span>
+            <span class="avatar sm green">U2</span>
+            <span style="display:grid;place-items:center;font-size:12px;color:var(--muted);margin-left:4px">+120</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Student Progress -->
+        <div class="float-card c2">
+          <div style="display:flex;justify-content:between;margin-bottom:10px">
+            <span style="font-size:13px;font-weight:600">English B2 Kursi</span>
+            <span style="font-size:13px;color:var(--blue);font-weight:700">75%</span>
+          </div>
+          <div class="bar-track mb-2">
+            <div class="bar-fill" style="width: 75%"></div>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">Keyingi dars: Writing task (Ertaga 09:00)</p>
+        </div>
+
+        <!-- Card 3: Chat Preview -->
+        <div class="float-card c3">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <span class="avatar sm online">A</span>
+            <div>
+              <div style="font-size:13px;font-weight:600">Ustoz Karimov</div>
+              <div style="font-size:10px;color:var(--green)">yozmoqda...</div>
+            </div>
+          </div>
+          <div class="msg them" style="max-width:100%;margin-bottom:0;font-size:12px;padding:8px 10px">
+            Savollaringiz bo'lsa chatga yozib qoldiring, dars oxirida birma-bir javob beraman.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="feat">
+      <h2>Platforma Imkoniyatlari</h2>
+      <div class="sub-text">O'quvchilar va o'qituvchilar uchun yaratilgan eng mukammal ekotizim</div>
+      
+      <div class="feat-grid">
+        <!-- Feature 1: Live Lessons -->
+        <div class="fcard">
+          <div class="icon-box">🎥</div>
+          <h3>Jonli Darslar</h3>
+          <p>Darslarni to'g'ridan-to'g'ri platformamiz orqali jonli efirda kuzating va real vaqtda savollar bering.</p>
+        </div>
+        
+        <!-- Feature 2: Telegram Chat -->
+        <div class="fcard">
+          <div class="icon-box">💬</div>
+          <h3>Telegram-style Chat</h3>
+          <p>O'qituvchilar va guruhdoshlar bilan xuddi Telegram kabi qulay va tezkor chat orqali muloqot qiling.</p>
+        </div>
+        
+        <!-- Feature 3: Courses -->
+        <div class="fcard">
+          <div class="icon-box">📚</div>
+          <h3>500+ Kurslar</h3>
+          <p>Har qanday yo'nalish bo'yicha sifatli video darsliklar, qo'llanmalar va o'quv materiallari ombori.</p>
+        </div>
+
+        <!-- Feature 4: Certificates -->
+        <div class="fcard">
+          <div class="icon-box">🏆</div>
+          <h3>Sertifikatlar</h3>
+          <p>Kurslarni muvaffaqiyatli tamomlab, o'z bilim darajangizni tasdiqlovchi rasmiy sertifikatlarga ega bo'ling.</p>
+        </div>
+
+        <!-- Feature 5: Expert Teachers -->
+        <div class="fcard">
+          <div class="icon-box">👨‍🏫</div>
+          <h3>Ekspert O'qituvchilar</h3>
+          <p>Respublikaning eng yetakchi o'quv markazlari mutaxassislari va tajribali ustozlaridan tahsil oling.</p>
+        </div>
+
+        <!-- Feature 6: Mobile App -->
+        <div class="fcard">
+          <div class="icon-box">📱</div>
+          <h3>Mobil Ilova</h3>
+          <p>Platformadan xohlagan vaqtda foydalanish uchun ilovani to'g'ridan-to'g'ri saytning o'zidan yuklab oling.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="feat" style="background:none">
+      <h2>Sizga mos keladigan tarifni tanlang</h2>
+      <div class="sub-text">Barcha tariflarda ilk 2 ta dars to'liq bepul taqdim etiladi!</div>
+      
+      <div class="price-grid">
+        <!-- Tier 1: Free -->
+        <div class="tier">
+          <h3>Bepul Plan</h3>
+          <div class="price">$0 <small>/ umrbod</small></div>
+          <p style="color:var(--muted);font-size:13px">Platforma bilan tanishish uchun boshlang'ich tarif</p>
+          <ul>
+            <li><span class="check">✓</span> Har bir kursdan 2 ta dars bepul</li>
+            <li><span class="check">✓</span> Telegram chat tizimidan foydalanish</li>
+            <li><span class="check">✓</span> Cheklangan profil sozlamalari</li>
+            <li class="off"><span class="check">✕</span> 3-dars va undan keyingilar locked</li>
+            <li class="off"><span class="check">✕</span> Kursni yakunlash sertifikati</li>
+            <li class="off"><span class="check">✕</span> Premium yordam markazi</li>
+          </ul>
+          <a href="pages/login.html" class="btn btn-ghost btn-block" style="margin-top:auto">Bepul boshlash</a>
+        </div>
+
+        <!-- Tier 2: Pro -->
+        <div class="tier popular">
+          <div class="ribbon">OMMABOP</div>
+          <h3>Pro Plan</h3>
+          <div class="price">$9.99 <small>/ oyiga</small></div>
+          <p style="color:var(--muted);font-size:13px">O'rganish va professional o'sish uchun eng yaxshi tarif</p>
+          <ul>
+            <li><span class="check">✓</span> Barcha kurslar va darslarga to'liq kirish</li>
+            <li><span class="check">✓</span> Telegram chat guruhlari & kanallari</li>
+            <li><span class="check">✓</span> Uyga vazifalar va tekshiruvlar</li>
+            <li><span class="check">✓</span> Kursni yakunlash sertifikatlari</li>
+            <li><span class="check">✓</span> Ekspert ustozlar bilan yopiq chatlar</li>
+            <li><span class="check">✓</span> Prioritet yordam markazi</li>
+          </ul>
+          <a href="pages/login.html" class="btn btn-primary btn-block" style="margin-top:auto">Hozir o'tish</a>
+        </div>
+
+        <!-- Tier 3: Enterprise -->
+        <div class="tier">
+          <h3>O'quv Markazlar</h3>
+          <div class="price">$29.99 <small>/ oyiga</small></div>
+          <p style="color:var(--muted);font-size:13px">Boshliq (Admin) va markaz boshqaruvi uchun kengaytirilgan tarif</p>
+          <ul>
+            <li><span class="check">✓</span> O'z o'quv markazini qo'shish & boshqarish</li>
+            <li><span class="check">✓</span> Jami o'qituvchilar va o'quvchilarni nazorat qilish</li>
+            <li><span class="check">✓</span> Batafsil moliyaviy hisobotlar & statistika</li>
+            <li><span class="check">✓</span> API va tizim integratsiyalari</li>
+            <li><span class="check">✓</span> Maxsus branding va xususiylashtirish</li>
+            <li><span class="check">✓</span> 24/7 Shaxsiy menedjer yordami</li>
+          </ul>
+          <a href="pages/login.html" class="btn btn-ghost btn-block" style="margin-top:auto">Markazni ulash</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="feat">
+      <h2>Tez-tez beriladigan savollar</h2>
+      <div class="sub-text">Sizni qiziqtirgan savollarga javoblar</div>
+      
+      <div style="max-width: 800px; margin: 40px auto 0; display:flex; flex-direction:column; gap:16px;">
+        <div class="card card-pad">
+          <h4 style="margin-bottom:8px;font-size:15px;color:var(--text)">Darslar qanday tartibda bo'ladi?</h4>
+          <p style="font-size:13.5px;color:var(--muted)">Har bir kurs video darsliklar, interaktiv topshiriqlar va jonli vebinarlardan iborat. Har bir kursning dastlabki 2 ta darsini to'liq bepul ko'rishingiz mumkin.</p>
+        </div>
+        <div class="card card-pad">
+          <h4 style="margin-bottom:8px;font-size:15px;color:var(--text)">Mobil ilovani qayerdan yuklasam bo'ladi?</h4>
+          <p style="font-size:13.5px;color:var(--muted)">Ilovamizni Google Play yoki App Store dan izlashingiz shart emas. Platformamizning o'ng pastki qismidagi ko'k rangli yuklab olish tugmasi orqali ilovani Windows, macOS yoki Android APK formatlarida to'g'ridan-to'g'ri yuklab olishingiz mumkin.</p>
+        </div>
+        <div class="card card-pad">
+          <h4 style="margin-bottom:8px;font-size:15px;color:var(--text)">To'lovlarni qanday amalga oshiraman?</h4>
+          <p style="font-size:13.5px;color:var(--muted)">Siz tariflarni faollashtirish uchun tizim ichidagi Payme, Click va Stripe to'lov tizimlari orqali to'lov qilishingiz mumkin. Barcha to'lovlar xavfsiz va kafolatlangan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA End Section -->
+    <section class="cta-end">
+      <h2>Kelajagingizni bugundan boshlang</h2>
+      <p>CORE Academy bilan o'z ustingizda ishlashni hoziroq boshlang.</p>
+      <a href="pages/login.html" class="btn btn-primary btn-lg">Bepul Ro'yxatdan O'tish</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;font-weight:800;font-size:16px">
+            <span style="width:30px;height:30px;border-radius:8px;background:var(--grad-brand);display:grid;place-items:center;color:#fff;font-size:13px">C</span>
+            CORE Academy
+          </div>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6">
+            CORE Academy — bu zamonaviy IT, tillar va aniq fanlar bo'yicha eng ilg'or online va offline o'qitish platformasi.
+          </p>
+        </div>
+        <div>
+          <h4>Platforma</h4>
+          <a href="#features">Imkoniyatlar</a>
+          <a href="#pricing">Tariflar</a>
+          <a href="pages/login.html">Kurslar</a>
+        </div>
+        <div>
+          <h4>Yordam</h4>
+          <a href="#faq">Ko'p beriladigan savollar</a>
+          <a href="#">Qo'llab-quvvatlash</a>
+          <a href="#">Qoidalar va shartlar</a>
+        </div>
+        <div>
+          <h4>Aloqa</h4>
+          <p style="font-size:13.5px;color:var(--muted)">📞 +998 (90) 123-45-67</p>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:6px">✉️ support@coreacademy.uz</p>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:6px">📍 Toshkent sh., Chilonzor tumani</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 CORE Academy. Barcha huquqlar himoyalangan.</div>
+        <div style="display:flex;gap:14px">
+          <a href="#">Telegram</a>
+          <a href="#">YouTube</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- App Download Center Script Call & Inline Modal structure -->
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize FAB
+    buildFAB();
+  </script>
+</body>
+</html>
